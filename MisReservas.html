@@ -20,9 +20,10 @@
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">Shows de Stand Up</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
@@ -32,13 +33,75 @@
                     <li class="nav-item">
                         <a class="nav-link" href="shows.html">Próximos Shows</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
     </nav>
 
-   
+    <div class="container mt-5">
+        <h2 class="mb-4">Mis Reservas</h2>
+
+        <div id="mensaje-login" class="alert alert-warning">
+            Inicie sesión con su correo para ver sus reservas.
+            <div class="d-flex gap-2 mt-2">
+                <input type="email" id="emailUser" class="form-control w-50" placeholder="tu@correo.com">
+                <button class="btn btn-dark" onclick="verReservas()">Ver Mis Boletos</button>
+            </div>
+        </div>
+
+        <div id="seccion-tabla" style="display:none;">
+            <div class="table-responsive shadow-sm">
+                <table class="table table-striped border">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Show</th>
+                            <th>Boletos</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultado">
+                    </tbody>
+                </table>
+            </div>
+            <button class="btn btn-outline-secondary mt-3" onclick="location.reload()">Consultar otro correo</button>
+        </div>
+    </div>
+
+    <script>
+        function verReservas() {
+            const correo = document.getElementById('emailUser').value.toLowerCase().trim();
+            // Obtenemos la lista que guardó el Integrante 3 (o una lista vacía si no hay nada)
+            const todas = JSON.parse(localStorage.getItem('todas_las_reservas')) || [];
+
+            // aqui se obtienen todas las que coinciden con el correo
+            const encontradas = todas.filter(r => r.correo.toLowerCase() === correo);
+
+            //si las coincidencias son mayores a 0, se muestra la tabla, sino se muestra el else 
+            if (encontradas.length > 0) {
+                //se crea el cuerpo de la tabla
+                const cuerpo = document.getElementById('resultado');
+                cuerpo.innerHTML = ""; // Limpiar
+
+                // por cada reserva encontrada, se agrega una fila a la tabla con el show, boletos y un estado fijo de "Confirmado"
+                encontradas.forEach(res => {
+                    cuerpo.innerHTML += `<tr>
+                <td>${res.show}</td>
+                <td>${res.boletos}</td>
+                <td><span class="badge bg-success">${res.estado}</span></td>
+            </tr>`;
+                });
+
+                // Cambiamos la vista
+                document.getElementById('mensaje-login').style.display = 'none';
+                document.getElementById('tabla-reservas').style.display = 'block';
+            } else {
+                alert("No se encontraron reservas con ese correo.");
+            }
+        }
+    </script>
+
+
 
 
 </body>
