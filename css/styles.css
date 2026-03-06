@@ -1,0 +1,113 @@
+/*Estilos generales*/
+
+body {
+    background: #f3f6fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/*Estilo para la Navbar*/
+
+.navbar {
+    background: linear-gradient(90deg, #0a1f44, #0d6efd);
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #cfe2ff;
+}
+
+
+/*Estilo para el Carousel*/
+
+.carousel-item img {
+    height: 420px;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+
+/*Estilo para el título*/
+
+h2 {
+    color: #0d47a1;
+    font-weight: 700;
+}
+
+
+/*Estilo para las cards*/
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+
+/*Estilo para el texto de precio*/
+
+.text-success {
+    font-size: 1.2rem;
+}
+
+
+/*Estilo para los botones*/
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 18px;
+    transition: .3s;
+}
+
+.btn-primary:hover {
+    background-color: #084298;
+    transform: scale(1.05);
+}
+
+
+/*Estilo para el footer*/
+
+footer {
+    background: #0a1f44;
+    font-size: 0.9rem;
+    letter-spacing: .5px;
+}
+
+
+/*Estilo para responsivo*/
+
+@media (max-width:768px) {
+    .carousel-item img {
+        height: 250px;
+    }
+    .card img {
+        height: 200px;
+    }
+}
