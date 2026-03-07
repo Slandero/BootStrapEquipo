@@ -290,23 +290,100 @@
     </div>
 
 
-    <!-- MODAL (para Integrante 3) -->
-    <div class="modal fade" id="reservaModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Reservar boletos</h5>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Formulario de reserva aquí.</p>
-                    <p class="text-muted">
-                        Este formulario será implementado por el Integrante 3.
-                    </p>
-                </div>
-            </div>
-        </div>
+   <!-- Mensaje Modal -->
+<div class="modal fade" id="reservaModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Encabezado del Modal -->
+      <div class="modal-header">
+        <h4 class="modal-title">Reservacion</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Cuerpo del Modal -->
+    <div class="modal-body">
+       <form action="" class="was-validated">
+    <div class="mb-3 mt-3">
+        <label for="uname" class="form-label">Nombre:</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre" required>
+        <div class="valid-feedback">Valido</div>
+        <div class="invalid-feedback">Por favor llenar este apartado</div>
     </div>
+
+
+    
+    <div class="mb-3 mt-3">
+        <label for="uname" class="form-label">Correo:</label>
+        <input type="text" class="form-control" id="correo" placeholder="Ingrese su correo" name="correo" required>
+        <div class="valid-feedback">Valido</div>
+        <div class="invalid-feedback">Por favor llenar este apartado</div>
+    </div>
+
+
+    
+    <div class="mb-3 mt-3">
+        <label for="uname" class="form-label">Numero de asientos:</label>
+        <input type="number" class="form-control" id="numasientos" placeholder="Ingrese el numero de asientos que desea" name="numasientos" required>
+        <div class="valid-feedback">Valido</div>
+        <div class="invalid-feedback">Por favor llenar este apartado</div>
+    </div>
+    <hr>
+
+    <div>
+        <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#terminosycondiciones">Ver terminos y condiciones</button> 
+        
+
+    <div id="terminosycondiciones" class="collapse">
+            <h4>Términos y Condiciones de Venta de Boletos</h4>
+    
+    <p>Para el evento seleccionado anteriormente</p>
+    <p>Organizador: ANDA</p>
+
+    <hr>
+
+    <h5>1. Acceso y Boletos</h5>
+    <p>Solo se permitirá el ingreso con un boleto válido, ya sea en formato físico o digital. Cada boleto cuenta con un código único de acceso. El evento está sujeto a restricciones de edad ([Mayores de 18 años / Todo público]), por lo que se podrá solicitar una identificación oficial al ingresar. En caso de que el recinto alcance su capacidad máxima por normas de seguridad, no se permitirá el acceso adicional.</p>
+
+    <h5>2. Políticas de Reembolso y Cancelación</h5>
+    <p>Todas las ventas son finales; no se aceptan cambios ni devoluciones por parte del comprador. En caso de cancelación definitiva del evento por parte del organizador, se procederá al reembolso del valor nominal del boleto. Si el evento es reprogramado, el boleto será válido para la nueva fecha; si el usuario no puede asistir, tendrá un periodo de [X] días para solicitar su devolución.</p>
+
+    <h5>3. Código de Conducta</h5>
+    <p>Para garantizar una buena experiencia, queda estrictamente prohibido el "heckling" o cualquier tipo de interrupción constante al comediante. El personal de seguridad tiene la facultad de retirar a cualquier persona que altere el orden sin derecho a reembolso. Asimismo, se prohíbe el uso de cámaras profesionales o la grabación íntegra del show para proteger la propiedad intelectual del artista.</p>
+
+    <h5>4. Derechos de Imagen</h5>
+    <p>Al adquirir su entrada, el asistente autoriza el uso de su imagen de manera incidental en materiales fotográficos o audiovisuales destinados a la promoción del artista o el recinto en redes sociales y medios digitales.</p>
+
+    <h5>5. Responsabilidad</h5>
+    <p>El organizador y el recinto no se hacen responsables por la pérdida de objetos personales ni por incidentes derivados del consumo irresponsable de sustancias o alcohol dentro de las instalaciones.</p>
+
+     <div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" id="aceptarterminos" name="aceptarterminos" required>
+    <label class="form-check-label" for="myCheck">Aceptas terminos y condiciones?</label>
+    <div class="valid-feedback">Aceptaste los terminos y condiciones</div>
+    <div class="invalid-feedback">Debes de aceptar los terminos y condiciones</div>
+  </div>
+        </div>
+
+        <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Enviar</button>
+    </div>
+   
+
+       </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+
+     
+
+    </div>
+  </div>
+</div>
+
+
 
 
     <!-- Tooltips -->
