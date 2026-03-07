@@ -45,7 +45,8 @@
         <div id="mensaje-login" class="alert alert-warning">
             Inicie sesión con su correo para ver sus reservas.
             <div class="d-flex gap-2 mt-2">
-                <input type="email" id="emailUser" class="form-control w-50" placeholder="tu@correo.com">
+                <input type="email" id="emailUser" class="form-control w-50" placeholder="tu@gmail.com">
+                
                 <button class="btn btn-dark" onclick="verReservas()">Ver Mis Boletos</button>
             </div>
         </div>
@@ -83,7 +84,7 @@
                 const cuerpo = document.getElementById('resultado');
                 cuerpo.innerHTML = ""; // Limpiar
 
-                // por cada reserva encontrada, se agrega una fila a la tabla con el show, boletos y un estado fijo de "Confirmado"
+                // por cada reserva encontrada, se agrega una fila a la tabla
                 encontradas.forEach(res => {
                     cuerpo.innerHTML += `<tr>
                 <td>${res.show}</td>
@@ -94,7 +95,7 @@
 
                 // Cambiamos la vista
                 document.getElementById('mensaje-login').style.display = 'none';
-                document.getElementById('tabla-reservas').style.display = 'block';
+                document.getElementById('seccion-tabla').style.display = 'block';
             } else {
                 alert("No se encontraron reservas con ese correo.");
             }
